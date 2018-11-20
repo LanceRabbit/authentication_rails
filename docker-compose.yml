@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:9.6
+    container_name: MyPostgres
+    volumes:
+      - ./tmp/data/postgresql:/postgresql
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=authenticaiton-app
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=authenticaiton-app
